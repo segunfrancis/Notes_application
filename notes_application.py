@@ -17,9 +17,14 @@ class NotesApplication(object):
 			print "Note ID: ", index+1
 			print item
 			print "By ", self.author
-		
+	
+	def get(self, note_id):
+		if type(note_id) == int:
+			print self.notes[note_id-1]
+	
 			
 a = NotesApplication("grey")
 a.create("first note")
 a.create("second note")
 a.listNotes()
+a.get(1)
