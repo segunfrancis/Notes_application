@@ -46,6 +46,17 @@ class NotesApplication(object):
 		else:
 			return "error"
 
+	def edit(self, note_id, new_content):
+		if type(note_id) != int:
+			return "error"
+		if type(new_content) != str:
+			return "error"
+		else:
+			self.notes.pop(note_id-1)
+			self.notes.insert(note_id-1, new_content)
+			return "edit successful"
+
+
 	
 a = NotesApplication("grey")
 a.create("first note")
@@ -54,4 +65,5 @@ a.listNotes()
 a.get(1)
 a.search('this')
 a.delete(1)
+a.edit(2, "real second note")
 a.listNotes()
