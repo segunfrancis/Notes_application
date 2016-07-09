@@ -37,6 +37,15 @@ class NotesApplication(object):
 		else:
 			print "error"
 
+	def delete(self, note_id):
+		if note_id > len(self.notes):
+			print "Not applicable"
+		if type(note_id) == int:
+			self.notes.pop(note_id-1)
+			return "delete successful"
+		else:
+			return "error"
+
 	
 a = NotesApplication("grey")
 a.create("first note")
@@ -44,3 +53,5 @@ a.create("second note")
 a.listNotes()
 a.get(1)
 a.search('this')
+a.delete(1)
+a.listNotes()
