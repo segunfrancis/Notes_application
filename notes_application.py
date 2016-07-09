@@ -12,7 +12,14 @@ class NotesApplication(object):
 		else:
 			return "only alphabets are allowed"
 
+	def listNotes(self):
+		for index,item in enumerate(self.notes):
+			print "Note ID: ", index+1
+			print item
+			print "By ", self.author
+		
 			
 a = NotesApplication("grey")
 a.create("first note")
 a.create("second note")
+a.listNotes()
